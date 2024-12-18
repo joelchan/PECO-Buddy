@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontology Matches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .document {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .pill {
+            display: inline-block;
+            background-color: #f0f8ff;
+            color: #000;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        .hidden {
+            display: none;
+        }
+        .links {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function toggleLinks(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+            } else {
+                element.classList.add("hidden");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Ontology Matches Viewer</h1>
+    {% for document in documents %}
+        <div class="document">
+            <h2>{{ document['doc_title'] or "Untitled Document" }}</h2>
+            <p><strong>PECO Statement:</strong> {{ document['peco_statement'] }}</p>
+
+            {% for key, elements in document['peco_elements'].items() %}
+                <h3>{{ key }}</h3>
+                {% for element in elements %}
+                    <p><strong>Text:</strong> {{ element['text'] }}</p>
+                    {% set parent_index = loop.index0 %}
+                    {% for match in element['matches'] %}
+                        <div class="pill" onclick="toggleLinks('links-{{ loop.index0 }}-{{ parent_index }}')">
+                            {{ match['label'] }}
+                        </div>
+                        <div id="links-{{ loop.index0 }}-{{ parent_index }}" class="hidden links">
+                            <a href="{{ match['iri'] }}" target="_blank">{{ match['iri'] }}</a>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>

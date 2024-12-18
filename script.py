@@ -3,6 +3,7 @@ from urllib.parse import quote # for double encoding IRIs for the API calls
 import time
 import json
 from docx import Document
+from jinja2 import Template
 
 def retrieve_ontology_matches(term, numresults=50, ontology=None):
     """
@@ -248,11 +249,44 @@ for annotation in annotations:
 
 with open("data/parsed_output.json", "w") as f:
     json.dump(parsed_output, f, indent=2)
-            
 
+ 
 # # Print the structured output
 # for i, table in enumerate(result, 1):
 #     print(f"Table {i}:")
 #     for color, texts in table["PECO statement highlights"].items():
 #         print(f"  Color: {color}, Text: {', '.join(texts)}")
 #     print("-" * 50)
+
+
+# Define the data to be displayed in the table
+data = [
+    {"Name": "John", "Age": 25, "City": "New York"},
+    {"Name": "Jane", "Age": 30, "City": "Los Angeles"},
+    {"Name": "Bob", "Age": 35, "City": "Chicago"}
+]
+
+# Define the HTML table template
+template = """
+<table border="1">
+  <tr>
+    {% for header in headers %}
+      <th>{{ header }}</th>
+    {% endfor %}
+  </tr>
+  {% for row in data %}
+    <tr>
+      {% for cell in row %}
+        <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+"""
+
+# Render the template with the data
+headers = ["Name", "Age", "City"]
+html_table = Template(template).render(headers=headers, data=data)
+
+# Print the HTML table to the console
+print(html_table)
