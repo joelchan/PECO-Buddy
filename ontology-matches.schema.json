@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "",
+  "title": "Ontology Matches",
+  "description": "A format for storing ontology matches for a PECO statement",
+  "type": "object",
+  "properties":  {
+    "doc_title": {
+      "description": "The title of the document",
+      "type": "string"
+    }
+  }
+}
+   'doc_lastauthorname': 'Smith',
+   'doc_year': 2021,
+   'doc_url': 'example',
+   'doc_peco_section': '2.1 Objectives',
+   'peco_statement': 'what is the effect of exposure to xxy patients with diabetes on the risk of heart attack',
+   'peco_elements':
+      {
+          'population': [
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+          ],
+          'exposure': [
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+          ],
+          'comparator': [
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+          ],
+          'outcome': [
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+              {
+                  'rawtext': 'patients with diabetes',
+                  'ontology_matches': [
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      },
+                      {
+                          'label': 'Diabetes Mellitus',
+                          'iri': 'http://purl.obolibrary.org/obo/DOID_9351',
+                          'distance_from_root': 3,
+                          'ontology': 'doid',
+                          'description': 'A metabolic disease that has_material_basis_in a complete lack of insulin production, or an inability to produce insulin, or an inability to properly use insulin.',
+                      }
+                  ]
+              },
+          ]   
+      }
+   },
