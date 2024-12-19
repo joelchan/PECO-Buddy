@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ontology Matches</title>
+    <title>Ontology Matches Viewer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,18 +36,24 @@
     {% for document in documents %}
         <div class="document">
             <h2>{{ document['doc_title'] or "Untitled Document" }}</h2>
-            <p><strong>({{ document['doc_lastauthorname'] }} {{ document['doc_year']}}) | Open-Access URL: <a href="{{ document['url'] }}"> {{document['url']}}</a></strong></p>
-            <p>PECO Statement:{{ document['peco_statement'] }}</p>
+            <p><strong><a id="peco-{{ document['id']}}" href="#peco-{{ document['id']}}">PECO Statement</a>:</strong> {{ document['peco_statement'] }}</p>
 
             {% for key, elements in document['peco_elements'].items() %}
                 <h3>{{ key }}</h3>
                 {% for element in elements %}
-                    <p><strong>Text:</strong> {{ element['text'] }}</p>
+                    <!-- Add an anchor with the unique ID -->
+                    <p>
+                        <a id="{{ element['id'] }}" href="#{{ element['id'] }}">
+                            <strong>Text:</strong> {{ element['text'] }}
+                        </a>
+                    </p>
+                    <p>
                     {% for match in element['matches'] %}
                         <a href="{{ match['iri'] }}" target="_blank" class="pill">
                             {{ match['label'] }}
                         </a>
                     {% endfor %}
+                    </p>
                 {% endfor %}
             {% endfor %}
         </div>
