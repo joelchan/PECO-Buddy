@@ -23,47 +23,30 @@
             padding: 5px 10px;
             margin: 5px;
             border-radius: 15px;
-            cursor: pointer;
             border: 1px solid #ccc;
+            text-decoration: none;
         }
-        .hidden {
-            display: none;
-        }
-        .links {
-            margin-left: 20px;
-            margin-top: 5px;
+        .pill:hover {
+            background-color: #e0e0e0;
         }
     </style>
-    <script>
-        function toggleLinks(id) {
-            var element = document.getElementById(id);
-            if (element.classList.contains("hidden")) {
-                element.classList.remove("hidden");
-            } else {
-                element.classList.add("hidden");
-            }
-        }
-    </script>
 </head>
 <body>
     <h1>Ontology Matches Viewer</h1>
     {% for document in documents %}
         <div class="document">
             <h2>{{ document['doc_title'] or "Untitled Document" }}</h2>
-            <p><strong>PECO Statement:</strong> {{ document['peco_statement'] }}</p>
+            <p><strong>({{ document['doc_lastauthorname'] }} {{ document['doc_year']}}) | Open-Access URL: <a href="{{ document['url'] }}"> {{document['url']}}</a></strong></p>
+            <p>PECO Statement:{{ document['peco_statement'] }}</p>
 
             {% for key, elements in document['peco_elements'].items() %}
                 <h3>{{ key }}</h3>
                 {% for element in elements %}
                     <p><strong>Text:</strong> {{ element['text'] }}</p>
-                    {% set parent_index = loop.index0 %}
                     {% for match in element['matches'] %}
-                        <div class="pill" onclick="toggleLinks('links-{{ loop.index0 }}-{{ parent_index }}')">
+                        <a href="{{ match['iri'] }}" target="_blank" class="pill">
                             {{ match['label'] }}
-                        </div>
-                        <div id="links-{{ loop.index0 }}-{{ parent_index }}" class="hidden links">
-                            <a href="{{ match['iri'] }}" target="_blank">{{ match['iri'] }}</a>
-                        </div>
+                        </a>
                     {% endfor %}
                 {% endfor %}
             {% endfor %}
